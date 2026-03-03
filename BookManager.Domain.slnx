@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="BookManager.API/BookManager.API.csproj" />
+  <Project Path="BookManager.Application/BookManager.Application.csproj" />
+  <Project Path="BookManager.Domain/BookManager.Domain.csproj" />
+  <Project Path="BookManager.Infrastructure/BookManager.Infrastructure.csproj" />
+  <Project Path="BookManager.tests/BookManager.tests.csproj" Id="c8e172e8-4290-4843-aa52-41a57dd4d185" />
+</Solution>

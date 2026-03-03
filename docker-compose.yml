@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  bookmanager-api:
+    build:
+      context: .
+      dockerfile: BookManager.API/Dockerfile
+    ports:
+      - "5044:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=BookManagerDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True
+      - JwtSettings__SecretKey=ThisIsAVeryLongSecretKeyForJwtTokenGeneration123!
+      - JwtSettings__Issuer=BookManagerAPI
+      - JwtSettings__Audience=BookManagerUsers
+      - JwtSettings__ExpirationMinutes=60
+      - EmailSettings__Host=sandbox.smtp.mailtrap.io
+      - EmailSettings__Port=2525
+      - EmailSettings__Username=02df8a2339bfe8
+      - EmailSettings__Password=3adfae321515e2
+      - EmailSettings__FromEmail=noreply@bookmanager.com
+      - EmailSettings__FromName=BookManager
+    depends_on:
+      - sqlserver
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Your_password123
+    ports:
+      - "1433:1433"

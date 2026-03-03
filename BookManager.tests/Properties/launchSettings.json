@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "BookManager.tests": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:58202;http://localhost:58203"
+    }
+  }
+}
